@@ -24,14 +24,24 @@
     <h1><a href="{{ path('home')}}">La Relecture</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="{{ path('home') }}">Home</a></li>
-            <li><a href="#">Se connecter</a></li>
-            <li><a href="#">Contact</a></li>
 
+            {% if app.user %}
+            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+
+            {% else %}
+            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+            <li><a href="#">Contact</a></li>
             <li><a href="{{ path('register') }}" class="button special">Inscription</a></li>
+
+            {% endif %}
+
         </ul>
     </nav>
 </header>
+{% block content %}
 
 {% block banner %}
 
@@ -49,7 +59,6 @@
     </section>
 {%  endblock %}
 
-{% block content %}
 
     <!-- One -->
     <section id="one" class="wrapper style1">
