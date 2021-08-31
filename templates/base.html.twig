@@ -26,7 +26,8 @@
         <ul>
 
             {% if app.user %}
-            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('home') }}">Accueil</a></li>
+            <li><a href="{{ path('account') }}">Mon compte</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
 
@@ -52,8 +53,13 @@
             <h2>Librairie La Relecture</h2>
             <p>L'art de lire à la Française</p>
             <ul class="actions">
-                <li><a href="{{ path('register') }}" class="button big special">S'inscrire</a></li>
+                {% if app.user %}
                 <li><a href="#elements" class="button big alt">En savoir +</a></li>
+                {% else %}
+                    <li><a href="{{ path('register') }}" class="button big special">S'inscrire</a></li>
+                    <li><a href="#elements" class="button big alt">En savoir +</a></li>
+
+                {% endif %}
             </ul>
         </div>
     </section>

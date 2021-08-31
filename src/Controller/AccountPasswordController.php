@@ -37,12 +37,15 @@ class AccountPasswordController extends AbstractController
 
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
-
+                $notification = 'Votre mot de passe a bien été mis à jour';
+                }else {
+                    $notification = 'le mot de passe saisie n\est pas le bon';
                 }
         }
 
         return $this->render('account/password.html.twig',[
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'notification'=>$notification
         ]);
     }
 }
