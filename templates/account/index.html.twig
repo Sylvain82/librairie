@@ -3,9 +3,10 @@
 {% block title %}La relecture - Mon compte{% endblock %}
 
 {% block content %}
-    <h1>Mon Compte</h1>
+    <div class="text-center mt-5"><h1>Mon Compte</h1>
     <p>Bienvenue {{ app.user.firstname }} {{ app.user.lastname }} <br>
     Vous pourrez gérer votre compte dans cette rubrique. </p>
 
         <a href="{{ path('account_password') }}">- Modifier mon mot de passe</a>
+    </div>
 {% endblock %}
