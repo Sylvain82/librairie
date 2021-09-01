@@ -37,6 +37,21 @@ class Product
      */
     private $price;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $illustration;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $bestseller;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +101,42 @@ class Product
     public function setPrice(int $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getIllustration(): ?string
+    {
+        return $this->illustration;
+    }
+
+    public function setIllustration(string $illustration): self
+    {
+        $this->illustration = $illustration;
+
+        return $this;
+    }
+
+    public function getBestseller(): ?bool
+    {
+        return $this->bestseller;
+    }
+
+    public function setBestseller(bool $bestseller): self
+    {
+        $this->bestseller = $bestseller;
 
         return $this;
     }

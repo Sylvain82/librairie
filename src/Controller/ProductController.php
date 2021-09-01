@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class ProductController extends AbstractController
 {
     private $entityManager;
 
@@ -17,15 +17,14 @@ class HomeController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/', name: 'home')]
+    #[Route('/nos-produits', name: 'products')]
     public function index(): Response
     {
+        $products = $this->entityManager->getRepository(Product::class)->findAll();
 
-        $products = $this->entityManager->getRepository(Product::class)->findByBest();
 
-
-        return $this->render('home/index.html.twig',[
-            'products'=>$products
+        return $this->render('product/index.html.twig', [
+            'products' => $products
         ]);
     }
 }
