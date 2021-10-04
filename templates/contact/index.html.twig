@@ -3,7 +3,7 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block content %}
-    <div id="contact">
+    <div class="w-85 m-auto" id="contact">
         <h2 class="text-center w-50 m-auto">Contact</h2>
         {% for message in app.flashes('notice') %}
         <div class="alert alert-info">{{ message }}</div>
