@@ -12,6 +12,8 @@
 
 	body {
 		background: #fff;
+		padding: 0;
+		margin: 0;
 	}
 
 	body, input, select, textarea {
@@ -1084,4 +1086,8 @@
 
 		#footer .icons a {
 			color: #bbb;
+		}
+
+		#skel-layers-hiddenwrapper {
+			display: none;
 		}
