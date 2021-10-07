@@ -1104,3 +1104,7 @@
 		#contact {
 			text-align: center;
 		}
+
+		form , .formulaireMdp{
+			margin: 0 5%;
+		}
