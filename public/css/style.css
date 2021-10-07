@@ -1091,3 +1091,12 @@
 		#skel-layers-hiddenwrapper {
 			display: none;
 		}
+
+		#lienMail {
+			color:#c5c7c8;
+		}
+		#lienMail:hover   {
+			font-size: medium;
+			color : #a3badb;
+			text-decoration: none;
+		}
